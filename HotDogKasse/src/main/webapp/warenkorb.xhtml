@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+    <title>Warenkorb</title>
+</h:head>
+<h:body>
+
+    <div>
+        <p:dataTable var="zutat" value="#{preis.zusammenstellungHotDog}">
+            <p:column>
+                <f:facet name="header">Dein Hot Dog</f:facet>
+                <h:form>
+                    <h:outputText  value="#{zutat.zutat}"/>
+                </h:form>
+            </p:column>
+        </p:dataTable>
+        <p:divider/>
+        <h:outputText value="Dein Hot Dog kostet Dich #{preis.hotDogPreis()}0 €"/>
+    </div>
+    <p:divider/>
+    <h2>Wie möchtest Du Deinen Hot-Dog bezahlen?</h2>
+            <h:form style="text-align:center">
+            <p:commandButton style="float: left" value="Zurück zur Auswahl" styleClass="rounded-button" action="index.xhtml?faces-redirect=true"/>
+            <p:commandButton style="margin-right: 50px"   value="Barzahlung"
+                             icon="pi pi-wallet"
+                             styleClass="rounded-button">
+            </p:commandButton>
+            <p:commandButton style="margin-left: 50px" value="Kreditkarte"
+                             icon="pi pi-credit-card"
+                             styleClass="rounded-button">
+            </p:commandButton>
+            <p:commandButton style="float: right" action="index.xhtml?faces-redirect=true"  value="Vorgang Abbrechen" styleClass="rounded-button" >
+                <p:ajax listener="#{preis.reset()}"/>
+                <p:ajax listener="#{kassensystem.resetKasse()}"/>
+            </p:commandButton>
+            </h:form>
+    <div>
+        <h3>Über eine Bewertung würden wir uns sehr freuen!</h3>
+        <h:form style="text-align: center">
+            <p:barcode value="http://localhost:8080/HotDogKasse_war_exploded/bewertung.xhtml" type="qr" format="png" width="300" height="300"/>
+        </h:form>
+    </div>
+</h:body>
+</html>

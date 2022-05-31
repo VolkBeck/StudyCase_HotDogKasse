@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+    <title>Bewertung</title>
+</h:head>
+<h:body>
+        <div style="margin-top: 200px">
+
+        <div class="bewertung">
+            <h1>Vielen Dank für deinen Einkauf</h1>
+            <p style="color: #1C1C1C; font-weight: bold;">
+                Über eine positive Bewertung oder sachliche Kritik würden wir uns sehr freuen. <br/>
+                Dies hilft uns unseren Service
+                an den von Dir angesprochenen Schwachstellen zu verbessern.
+            </p>
+            <h1>Vielen Dank das Du Dir die Zeit nimmst um uns besser werden zu lassen!</h1>
+        <h:outputText style="margin: 25px" class="ch" value="Wie zufrieden warst Du allgemein?"/><br/>
+        <p:rating value="0"/>
+        </div>
+        <div class="bewertung">
+            <h:outputText style="margin: 25px" class="ch" value="Wie hat es Dir geschmeckt?"/><br/>
+            <p:rating value="0"/>
+        </div>
+        <div class="bewertung">
+            <h:outputText style="margin: 25px" class="ch" value="Wurdest Du freundlich bedient?"/><br/>
+            <p:rating value="0"/>
+        </div>
+        <div class="bewertung">
+            <h:outputText style="margin: 25px" class="ch" value="Würdest Du uns weiterempfehlen?"/><br/>
+            <p:rating value="0"/>
+        </div>
+
+        </div>
+
+
+</h:body>
+</html>
